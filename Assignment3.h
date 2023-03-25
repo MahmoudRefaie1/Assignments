@@ -8,7 +8,9 @@ class Person{
     string ID;
     int age;
     public:
-    Person();
+    Person(){
+        
+    }
     void setname(string name_inpt){
         name = name_inpt;
     }
@@ -107,25 +109,18 @@ class mechanic: public Person{
     int getcounter(){
         return counter;
     }
-    void setapps(){
-        int h, m;
-        
-            for(int i=0; i<counter; i++){
-                cout<<"Enter Hour"<<endl;
-                cin>> h;
-                cout<<"Enter Mins" <<endl;
-                cin>>m;
-                if(isAvailable(h, m)){
-            arrOfApp[i].hours=h;
-            arrOfApp[i].mins=m;
+    void setapps(int h, int m){
+           
+           if(isAvailable(h, m)){
+            arrOfApp[counter].hours=h;
+            arrOfApp[counter].mins=m;
             counter++;
                 }
             else
             cout <<"Error: This slot has been taken";
-            
-        }
+           }
         
-        }
+
     void getapps(){
         for(int i=0; i<counter; i++){
             cout<< arrOfApp[i].hours << ":"<< arrOfApp[i].mins <<endl;

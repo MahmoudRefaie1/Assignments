@@ -25,13 +25,14 @@ int main(){
  
 
     cout<< "Please enter the info of every customer "<<endl;
-    for (int i=0; i<4; i++){
+    for (int i=0; i<3; i++){
         cout<<"Enter name "<<endl;
         cin>> name;
         customer[i].setname(name);
         cout <<"Enter the wanted time for the appointment h then m. "<<endl;
         cin>>customer->app.hours;
         cin>> customer->app.mins;
+        z.setapps(customer->app.hours, customer->app.mins);
         
         if(customer[i]>customer[i+1])
         Cus_q.Push(customer[i+1]); //this is to compare who has less mins so he will enter the queue first.
@@ -39,11 +40,12 @@ int main(){
         Cus_q.Push(customer[i]);
         
     }
+    
     for(int y=0;y<4;y++){
         Cus_q.Pop(x);
         Mech_q.Pop(z);
         
-        z.setapps();
+        
         //display their info
        cout <<" Mr" << x.getname() << "has an appointment at " << x.app.hours << ":" << x.app.mins << " with " << z.getname();
 
