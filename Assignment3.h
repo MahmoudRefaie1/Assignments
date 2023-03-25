@@ -86,7 +86,7 @@ class Customer: public Person{
 
 class mechanic: public Person{
     private:
-    int counter;
+    int counter=0;
    
     appointment arrOfApp[10]; //assuming only 10 appointments per mechanic.
     public:
